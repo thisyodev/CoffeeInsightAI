@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { analyzeLocation } from "../services/api";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.PROD ? "https://coffee-intent-api.onrender.com/api/v1" : "http://localhost:3000/api/v1");
+
 const LocationAnalyzerModal = ({
   isOpen,
   onClose,
@@ -36,7 +38,7 @@ const LocationAnalyzerModal = ({
     searchTimeoutRef.current = setTimeout(async () => {
       try {
         const res = await fetch(
-          `http://localhost:3000/api/v1/location/search?q=${encodeURIComponent(query)}`,
+          `${API_BASE_URL}/location/search?q=${encodeURIComponent(query)}`,
         );
         if (!res.ok) throw new Error("Search failed");
         const resData = await res.json();
@@ -99,7 +101,7 @@ const LocationAnalyzerModal = ({
         lang === "th" ? "กำลังค้นหาชื่อสถานที่..." : "Locating place...",
       );
       const res = await fetch(
-        `http://localhost:3000/api/v1/location/reverse?lat=${lat}&lng=${lng}&lang=${lang}`,
+        `${API_BASE_URL}/location/reverse?lat=${lat}&lng=${lng}&lang=${lang}`,
       );
       if (!res.ok) throw new Error("Reverse geocode failed");
       const resData = await res.json();

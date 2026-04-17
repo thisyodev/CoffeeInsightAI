@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api/v1";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.PROD ? "https://coffee-intent-api.onrender.com/api/v1" : "http://localhost:3000/api/v1");
 const TENANT_ID = "retail-enterprise-01";
 
 export async function fetchDashboard(lang = "th", branch = "asoke-01") {
