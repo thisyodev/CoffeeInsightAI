@@ -14,7 +14,7 @@ export const ENGINE_METADATA = {
   last_trained: "2026-04-10",
   methodology: "Hybrid: Deterministic Geo-Spatial + AI (Qwen) Insights",
   engine_type: "hybrid-deterministic-ai",
-  ai_model: process.env.ENABLE_REAL_AI === "true" ? "minimax/minimax-m2.5:free (OpenRouter)" : "mock-local",
+  ai_model: process.env.ENABLE_REAL_AI === "true" ? "qwen/qwen3.6-plus (OpenRouter)" : "mock-local",
   revenue_formula:
     "((recovered_demand / peak_window) * 0.18 * efficiency) * (1 + rating_advantage)",
   geo_formula:

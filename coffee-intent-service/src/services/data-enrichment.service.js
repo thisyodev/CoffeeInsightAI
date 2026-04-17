@@ -42,7 +42,7 @@ export const enrichLocationData = async (branchId, lat, lng) => {
     if (USE_REAL_AI) {
       try {
         const response = await openai.chat.completions.create({
-          model: "minimax/minimax-m2.5:free",
+          model: "qwen/qwen3.6-plus",
           messages: [
             {
               role: "system",

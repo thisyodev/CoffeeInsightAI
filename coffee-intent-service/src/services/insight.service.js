@@ -105,7 +105,7 @@ Generate executive business insight based on the performance scenario.
 
   try {
     const response = await openai.chat.completions.create({
-      model: "minimax/minimax-m2.5:free",
+      model: "qwen/qwen3.6-plus",
       temperature: 0.3,
       response_format: { type: "json_object" },
       messages: [
@@ -202,7 +202,7 @@ export async function analyzeDashboardStats(context, lang = "th") {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "minimax/minimax-m2.5:free",
+      model: "qwen/qwen3.6-plus",
       temperature: 0.2,
       response_format: { type: "json_object" },
       messages: [
@@ -283,7 +283,7 @@ export async function generateDailyHeadline(context, lang = "th") {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "minimax/minimax-m2.5:free",
+      model: "qwen/qwen3.6-plus",
       temperature: 0.1,
       response_format: { type: "json_object" },
       messages: [

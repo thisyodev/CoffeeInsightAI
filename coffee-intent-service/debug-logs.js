@@ -64,12 +64,12 @@ async function checkOpenRouter() {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "minimax/minimax-m2.5:free",
+      model: "qwen/qwen3.6-plus",
       messages: [{ role: "user", content: "test" }],
       max_tokens: 5,
     });
     console.log("✅ OpenRouter Connection:   WORKING");
-    console.log(`✅ Model:                   minimax/minimax-m2.5:free`);
+    console.log(`✅ Model:                   qwen/qwen3.6-plus`);
     console.log(`✅ Response:                ${response.choices[0].message.content}`);
     return true;
   } catch (err) {

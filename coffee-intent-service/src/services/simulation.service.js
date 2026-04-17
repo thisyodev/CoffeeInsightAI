@@ -131,7 +131,7 @@ Proposed Scenarios: ${scenarioTimes.join(", ")}
 
   try {
     const response = await openai.chat.completions.create({
-      model: "minimax/minimax-m2.5:free",
+      model: "qwen/qwen3.6-plus",
       temperature: 0.1,
       messages: [
         { role: "system", content: SIMULATION_SYSTEM_PROMPT },
