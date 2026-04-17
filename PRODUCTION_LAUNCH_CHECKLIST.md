@@ -5,23 +5,27 @@
 ---
 
 ## Phase 0: Pre-Flight (Done)
+
 - [x] **Model Migration:** Updated to `qwen/qwen3.6-plus:free`.
 - [x] **Code Pushed:** Changes are live on GitHub.
-- [ ] **Environment Variables Check:** Ensure no secrets are hardcoded. 
+- [ ] **Environment Variables Check:** Ensure no secrets are hardcoded.
         *(e.g., OPENROUTER_API_KEY and DATABASE_URL must only be in `.env` or the hosting dashboard).*
 
 ---
 
 ## Phase 1: Backend Deployment (Render)
+
 **Target:** Deploy `coffee-intent-service` for FREE.
-**Link:** https://render.com
+**Link:** <https://render.com>
 
 **1. Create Service:**
+
 - [ ] Log in to Render via GitHub.
 - [ ] Click **New +** > **Web Service**.
 - [ ] Select Repository: `thisyodev/CoffeeInsightAI`.
 
 **2. Configure (Monorepo Setup):**
+
 - [ ] **Name:** `coffee-intent-api` (or preferred name).
 - [ ] **Region:** Oregon (recommended) or Frankfurt.
 - [ ] **Branch:** `main`.
@@ -31,29 +35,34 @@
 
 **3. Add Environment Variables:**
 *Go to the "Environment" tab of your new service and add:*
+
 - [ ] **`NODE_ENV`** = `production`
 - [ ] **`ENABLE_REAL_AI`** = `true`
 - [ ] **`OPENROUTER_API_KEY`** = `sk-or-v1-...` (Your OpenRouter Key)
 - [ ] **`DATABASE_URL`** = `postgresql://...` (Your Supabase/Neon/Render DB URL)
 
 **4. Deploy:**
+
 - [ ] Click **Create Web Service**.
 - [ ] Wait for status "Live".
-- [ ] **Copy the Service URL:** 
+- [ ] **Copy the Service URL:**
       `https://coffee-intent-api-xxxx.onrender.com`
 
 ---
 
 ## Phase 2: Frontend Deployment (Vercel)
+
 **Target:** Deploy `coffee-dashboard` for FREE.
-**Link:** https://vercel.com
+**Link:** <https://vercel.com>
 
 **1. Create Project:**
+
 - [ ] Log in to Vercel via GitHub.
 - [ ] Click **Add New...** > **Project**.
 - [ ] Import Repository: `thisyodev/CoffeeInsightAI`.
 
 **2. Configure (Monorepo Setup):**
+
 - [ ] **Project Name:** `coffee-insight-dashboard`
 - [ ] **Framework Preset:** Vite.
 - [ ] **Root Directory:** Click **Edit** > Select `coffee-dashboard`.
@@ -61,13 +70,15 @@
 - [ ] **Output Directory:** Leave default (`dist`).
 
 **3. Add Environment Variables:**
-- [ ] **`VITE_API_URL`** = `https://coffee-intent-api-xxxx.onrender.com` 
+
+- [ ] **`VITE_API_URL`** = `https://coffee-intent-api-xxxx.onrender.com`
       *(This is the URL you copied from Render in Phase 1).*
 
 **4. Deploy:**
+
 - [ ] Click **Deploy**.
 - [ ] Wait for success.
-- [ ] **Copy the Vercel URL:** 
+- [ ] **Copy the Vercel URL:**
       `https://coffee-insight-dashboard.vercel.app`
 
 ---
@@ -75,6 +86,7 @@
 ## Phase 3: Final Polish
 
 **1. Update CORS (Backend Code):**
+
 - [ ] Open `coffee-intent-service/server.js`.
 - [ ] Update CORS `origin` to include your new Vercel URL.
       *Example:* `origin: 'https://coffee-insight-dashboard.vercel.app'`
@@ -87,6 +99,7 @@
       *Render will auto-redeploy this change.*
 
 **2. Verify Live App:**
+
 - [ ] Open your Vercel URL in an Incognito window.
 - [ ] Perform a Search.
 - [ ] Trigger an AI Insight.
@@ -102,10 +115,10 @@
 
 - [ ] **Option A (Manual):** Visit the Render URL manually every morning.
 - [ ] **Option B (Automated):** Set up a free Cron Job.
-    - [ ] Go to https://cron-job.org
-    - [ ] Create account.
-    - [ ] Create a job that PINGs `https://coffee-intent-api-xxxx.onrender.com/api/ping` every 10 minutes.
-    - [ ] *Note: You will need to add `app.get('/api/ping', (req, res) => res.send('ok'));` to your server code.*
+  - [ ] Go to <https://cron-job.org>
+  - [ ] Create account.
+  - [ ] Create a job that PINGs `https://coffee-intent-api-xxxx.onrender.com/api/ping` every 10 minutes.
+  - [ ] *Note: You will need to add `app.get('/api/ping', (req, res) => res.send('ok'));` to your server code.*
 
 ---
 
