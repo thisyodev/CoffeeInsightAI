@@ -1,0 +1,20 @@
+{
+  "name": "coffee-intent-service",
+  "version": "1.0.0",
+  "description": "Coffee Intent Classification Service",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-cron": "^4.2.1",
+    "openai": "^4.85.4",
+    "pg": "^8.13.3",
+    "zod": "^3.24.2"
+  }
+}

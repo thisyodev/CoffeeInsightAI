@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout 20 curl -s -X POST http://localhost:3000/api/v1/simulate-multi -H 'Content-Type: application/json' -H 'x-tenant-id: retail-enterprise-01' -d '{\"scenarios\":[\"07:00\",\"08:00\"],\"branchId\":\"asoke-01\"}')",
+      "Bash(echo \"qwen3.6-plus       $$$$ HIGH     Excellent\")",
+      "Bash(echo \"deepseek-chat      $$   MEDIUM   Very Good  ← CURRENT\")",
+      "Bash(echo \"qwen-2.5-72b       $$$  MEDIUM   Good\")",
+      "Bash(echo \"gpt-3.5-turbo      $$   MEDIUM   Good\")",
+      "Bash(timeout 30 node -e ':*)",
+      "Bash(node restore-database.js)",
+      "Bash(curl -s http://localhost:3000/api/v1/branches -H 'x-tenant-id: retail-enterprise-01')",
+      "Bash(curl -s http://localhost:3000/api/v1/meta -H 'x-tenant-id: retail-enterprise-01')",
+      "Bash(xargs echo:*)",
+      "Bash(curl -s \"http://localhost:3000/api/v1/dashboard?branch=asoke-01\" -H \"x-tenant-id: retail-enterprise-01\")",
+      "Bash(timeout 15 curl -s -X POST http://localhost:3000/api/v1/location/analyze -H 'Content-Type: application/json' -H 'x-tenant-id: retail-enterprise-01' -d '{\"lat\":13.75,\"lng\":100.55,\"name\":\"Test\"}')",
+      "WebFetch(domain:maps.app.goo.gl)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\User\\.claude\\projects\\c--Work-CoffeeInsightAI\\memory"
+    ]
+  }
+}

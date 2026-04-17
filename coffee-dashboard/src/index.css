@@ -1,0 +1,130 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Anuphan:wght@400;700&display=swap");
+
+:root {
+  --color-primary-50: #fdfaf9;
+  --color-primary-100: #f9f1ee;
+  --color-primary-200: #f1dfd8;
+  --color-primary-300: #e3c4b9;
+  --color-primary-400: #d1a191;
+  --color-primary-500: #bd7d6a;
+  --color-primary-600: #a86552;
+  --color-primary-700: #8c5143;
+  --color-primary-800: #74453a;
+  --color-primary-900: #613c33; /* Deep Espresso */
+  --color-accent-gold: #d4af37;
+}
+
+:root {
+  font-family: "Outfit", "Anuphan", "Inter", system-ui, sans-serif;
+}
+
+.font-thai {
+  font-family: "Anuphan", sans-serif;
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #fefdfb;
+  color: #2a1810;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Premium Card Style */
+.premium-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.premium-card:hover {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes matrix-scroll {
+  0% {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+}
+
+.animate-matrix-scroll {
+  animation: matrix-scroll 10s linear infinite;
+}
+
+/* Glass Header */
+.glass-header {
+  background: rgba(111, 78, 55, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(208, 144, 90, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Gradient Text */
+.text-premium-gradient {
+  background: linear-gradient(135deg, #fff 0%, #a8a29e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f3f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4b0a3;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8926b;
+}
+
+/* Leaflet Overrides */
+.leaflet-container {
+  background: #fefdfb !important;
+}
+
+.leaflet-tile {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}

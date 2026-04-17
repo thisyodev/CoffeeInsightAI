@@ -1,0 +1,121 @@
+{
+    "success": true,
+    "model_version": "v1.0.0-deterministic",
+    "timestamp": "2026-02-28T14:24:03.424Z",
+    "data": {
+        "location_context": "Lumpini Park",
+        "totalQueries": 2450,
+        "morningPercent": "72%",
+        "workPercent": "38%",
+        "peakHour": "08:45",
+        "geoScore": 9.4,
+        "geoChange": "+0.2",
+        "geoStatus": "Market Leader",
+        "geoSparkline": [
+            6.1,
+            6.3,
+            6.5,
+            9.4
+        ],
+        "competitors": [
+            {
+                "name": "Lumpini Park",
+                "openingTime": "08:00",
+                "rating": 4.5,
+                "distanceKm": 0
+            }
+        ],
+        "intentDistribution": [
+            {
+                "name": "Morning Commute",
+                "value": 600,
+                "fill": "#846358"
+            },
+            {
+                "name": "Digital Nomad",
+                "value": 400,
+                "fill": "#bfa094"
+            },
+            {
+                "name": "Quick Grab",
+                "value": 500,
+                "fill": "#eaddd7"
+            },
+            {
+                "name": "Business Meet",
+                "value": 240,
+                "fill": "#d2bab0"
+            }
+        ],
+        "hourlyDistribution": [],
+        "workTrend": [
+            {
+                "hour": "07:00",
+                "value": 20
+            },
+            {
+                "hour": "08:00",
+                "value": 45
+            },
+            {
+                "hour": "09:00",
+                "value": 80
+            },
+            {
+                "hour": "10:00",
+                "value": 110
+            },
+            {
+                "hour": "11:00",
+                "value": 95
+            }
+        ],
+        "ai_analysis": {
+            "summary": "พบความต้องการกลุ่มคนทำงานเช้าสูงมากในพื้นที่",
+            "risks": [
+                "การเปิดร้านช้าทำให้เสียโอกาสการจับกลุ่มลูกค้าช่วงเช้าตรู่ให้คู่แข่งรายใหญ่",
+                "ระดับการเปิดร้านช้าสะสมทำให้สูญเสียรายได้คาดการณ์ 15-20% ต่อวัน"
+            ],
+            "opportunities": [
+                "ความได้เปรียบด้านคะแนนความพึงพอใจสามารถดึงลูกค้าพรีเมียมได้หากปรับเวลา",
+                "ความต้องการ 'พื้นที่ทำงาน' พุ่งสูงในช่วง 09:00 - 11:00 เป็นจุดแข็งหลัก"
+            ],
+            "priority_actions": [
+                "ปรับตารางการเปิดร้านเป็น 06:45 เพื่อดักหน้าคู่แข่งหลักในย่านนี้"
+            ],
+            "estimated_revenue_impact": "+22%"
+        },
+        "daily_report": {
+            "headline": "ปรับเวลาเป็น 07:00 เพื่อรับ Traffic มหาศาล",
+            "top_risk": "เสียรายได้ 18% ให้คู่แข่งรายใหญ่ในซอยเดิม",
+            "top_opportunity": "ดึงลูกค้าพรีเมียมด้วยคะแนน 4.8 ที่เป็นจุดแข็ง",
+            "action_today": "ประกาศปรับเวลาเปิดร้านเป็น 07:00 ทันที"
+        }
+    },
+    "explainability": {
+        "formula_breakdown": {
+            "geo_score": {
+                "proximity": 3.8,
+                "competitiveness": 3,
+                "alignment": 1.76,
+                "quality": 0.8
+            },
+            "revenue_uplift": {
+                "base": 15.3,
+                "efficiency": 0.85
+            }
+        },
+        "confidence_score": 0.98,
+        "assumptions": [
+            "Peak commuter window is 120 minutes (07:00-09:00)",
+            "Maximum revenue uplift from early opening capped at 18%",
+            "Capture efficiency constant at 0.85 for prime locations",
+            "Demand decay follows linear temporal distribution"
+        ],
+        "confidence_reason": "High data fidelity from real-time proximity and historical morning transit signals.",
+        "opening_gap_minutes": 0,
+        "demand_recovered_percent": 15,
+        "revenue_formula": "((recovered_demand / peak_window) * 0.18 * efficiency) * (1 + rating_advantage)",
+        "geo_formula": "(Proximity * 0.4) + (Gap_Comp * 0.3) + (Demand_Match * 0.2) + (Quality * 0.1)"
+    }
+}

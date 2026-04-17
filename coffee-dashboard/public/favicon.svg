@@ -1,0 +1,25 @@
+<svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simplified for Icon size -->
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) rotate(90) scale(80)">
+      <stop stop-color="#3b82f6" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    
+    <linearGradient id="beanGradient" x1="60" y1="60" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="100" cy="100" r="80" fill="url(#glow)"/>
+
+  <!-- Coffee Bean Base -->
+  <path d="M100 50C70 50 55 75 55 100C55 125 70 150 100 150C130 150 145 125 145 100C145 75 130 50 100 50Z" fill="url(#beanGradient)" fill-opacity="0.2" stroke="url(#beanGradient)" stroke-width="8"/>
+  
+  <!-- The Strategic S-Curve -->
+  <path d="M100 50C110 80 90 120 100 150" stroke="url(#beanGradient)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Data Node -->
+  <circle cx="100" cy="50" r="10" fill="white"/>
+</svg>
